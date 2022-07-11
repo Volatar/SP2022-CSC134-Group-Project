@@ -4,6 +4,8 @@
 
 #include "ClassRoom.h"
 
+// Mason Scarbro:
+
 // Instructions from instructor:
 
 // Define the member functions of class ClassRoom in ClassRoom.cpp:
@@ -26,6 +28,8 @@ void ClassRoom::setStudentArray(Student students[], int _numStudent)
 // Create a Student object by reading student record from the data file.
 // Add the student object in an array of Student.
 // Count the number of student objects created.
+
+// Norma Hernandez-Cruz from this point:
 
 // Void function which sorts array of student objects by student average score.
 // Need to compare each student’s average score.

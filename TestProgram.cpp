@@ -5,6 +5,8 @@
 #include "Student.h"
 #include "ClassRoom.h"
 
+// Dustin Smith
+
 // Instructions from instructor:
 
 // Define code to perform object-oriented programming in main () function of TestProgram.cpp:
