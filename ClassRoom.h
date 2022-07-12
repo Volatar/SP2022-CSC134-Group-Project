@@ -7,6 +7,8 @@
 
 #include "Student.h"
 
+using namespace std;
+
 // Instructions from instructor:
 
 // Declare the following data members and member function prototypes of class ClassRoom in ClassRoom.h:

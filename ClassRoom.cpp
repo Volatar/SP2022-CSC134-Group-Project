@@ -4,6 +4,8 @@
 
 #include "ClassRoom.h"
 
+using namespace std;
+
 // Mason Scarbro:
 
 // Instructions from instructor:

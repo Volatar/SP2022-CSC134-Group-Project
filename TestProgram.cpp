@@ -6,6 +6,8 @@
 #include "ClassRoom.h"
 #include <iostream>
 
+using namespace std;
+
 // Dustin Smith
 
 // Instructions from instructor:

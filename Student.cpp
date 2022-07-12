@@ -2,9 +2,11 @@
 // SP2022 CSC-134 Group Project
 // Group 8
 
-// Taylor Sanderson
-
 #include "Student.h"
+
+using namespace std;
+
+// Taylor Sanderson
 
 // Instructions from instructor:
 

@@ -5,6 +5,8 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+using namespace std;
+
 // Instructions from instructor:
 
 // Declare the following data members and member function prototypes of class Student in Student.h:
