@@ -2,6 +2,9 @@
 // SP2022 CSC-134 Group Project
 // Group 8
 
+#ifndef STUDENT_H
+#define STUDENT_H
+
 // Instructions from instructor:
 
 // Declare the following data members and member function prototypes of class Student in Student.h:
@@ -35,3 +38,4 @@
 
 // Value-returning function which returns the number of student object created.
 
+#endif

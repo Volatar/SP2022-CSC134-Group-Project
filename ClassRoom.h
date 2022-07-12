@@ -2,6 +2,9 @@
 // SP2022 CSC-134 Group Project
 // Group 8
 
+#ifndef CLASSROOM_H
+#define CLASSROOM_H
+
 #include "Student.h"
 
 // Instructions from instructor:
@@ -40,3 +43,4 @@ Student StudentArray[24];
 
 // Value-returning function which returns the number of students in the ClassRoom object. 
 
+#endif
