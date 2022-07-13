@@ -26,11 +26,12 @@ private:
 
 public:
     // Member functions:
+
     // Constructor without parameter
     Student();
 
     // Constructor with parameters
-    Student(string fName, string lName, string ssn, double scores[4]);
+    Student(string _fName, string _lName, string _ssn, double _scores[4]);
 
     // Destructor
     ~Student();
@@ -39,11 +40,11 @@ public:
     string getLName();
     string getFName();
     string getSSN();
-    void getScores(double scoresIO[4]);
+    void getScores();
     void setLName(string _lName);
     void setFName(string _fName);
     void setSSN(string _ssn);
-    void setScores(double scoresIO[4]);
+    void setScores(double _scores[4]);
 
     // Value-returning function which calculates and returns the average of 4 exam scores.
     double averageScore();
