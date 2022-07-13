@@ -40,7 +40,7 @@ public:
     string getLName();
     string getFName();
     string getSSN();
-    void getScores();
+    double* getScores();
     void setLName(string _lName);
     void setFName(string _fName);
     void setSSN(string _ssn);

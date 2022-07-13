@@ -3,6 +3,8 @@
 // Group 8
 
 #include "Student.h"
+#include <iomanip>
+#include <iostream>
 
 using namespace std;
 
@@ -19,9 +21,9 @@ static int numStudent = 0;
 Student::Student()
 {
     // Initialize non-static data members to default initial value (string – “”, double – 0.0) 
-    fName = ""
-    lName = ""
-    ssn = _""
+    fName = "";
+    lName = "";
+    ssn = "";
     for (int i = 0; i < 4; i++)
         scores[i] = 0.0;
     
@@ -59,50 +61,73 @@ Student::~Student()
 // Getter and setter function for each non-static data member.
 string Student::getLName()
 {
-
+    return lName;
 }
 
 string Student::getFName()
 {
-
+    return fName;
 }
 
 string Student::getSSN()
 {
-
+    return ssn;
 }
 
 double* Student::getScores()
 {
-
+    double *ptr;
+    ptr = scores;
+    return ptr;
 }
 
 void Student::setLName(string _lName)
 {
-
+    lName = _lName;
 }
 
 void Student::setFName(string _fName)
 {
-
+    fName = _fName;
 }
 
 void Student::setSSN(string _ssn)
 {
-
+    ssn = _ssn;
 }
 
 void Student::setScores(double _scores[])
 {
-
+    for (int i = 0; i < 4; i++)
+        scores[i] = _scores[i];
 }
 
 
 // Value-returning function to calculate and return the average of 4 exam scores.
-// Use for loop to iterate the scores array to access each exam score.
-// average score = total of 4 score / 4
+double Student::averageScore()
+{
+    double totalScore = 0.0;
+    for (int i = 0; i < 4; i++)
+        totalScore += scores[i];
+    return totalScore / 4;
+}
 
 
 // Void function to display student’s last name, first name, 4 exam scores and average score.
-// Each student’s information should be displayed as this format:
-// An image is included in the original document, please refer there for it
+void Student::display()
+{
+    cout << setw(15) << left << lName;
+    cout << setw(15) << left << fName;
+    cout << setw(15) << left << ssn;
+    for (int i = 0; i < 4; i++)
+        cout << setw(10) << right << showpoint << fixed << setprecision(1) << scores[i];
+    cout << setw(10) << right << showpoint << fixed << setprecision(1) << Student::averageScore();
+}
+
+// Value-returning function which returns the number of student object created.
+static int getNumStudent()
+{
+    return numStudent;
+}
+
+// Instructions unclear, made 2000 yew longbows on Oldschool Runescape. Can I turn these in for school credit?
