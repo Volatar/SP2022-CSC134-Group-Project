@@ -6,43 +6,40 @@
 #define CLASSROOM_H
 
 #include "Student.h"
+#include <ifstream>
 
 using namespace std;
 
-// Instructions from instructor:
+class ClassRoom
+{
+private:
+	string className;
+	int numOfStudent;
+	Student studentArray[24];
 
-// Declare the following data members and member function prototypes of class ClassRoom in ClassRoom.h:
+public:
+	// constructor
+	ClassRoom(string _className);
+	// Get set func
+	string getClassName();
+	int getNumOfStudent();
+	Student* getStudentArray();
+	void setClassName(string _className);
+	void setNumOfStudent(int _numOfStudent);
+	void setStudentArray(Student _studentArray[], int _numStudent);
+	
+	void popArray(ifstream _inFile);
+	void sortArrayByAvg();
+	void sortArrayByLName();
+	double calcAvg();
+	void displayStudentData();
+	int numOfStudentsInClass();
 
-// Data members
-// Classroom name (string, for example: “CSC134”)
-// Number of student objects added in this classroom (int)
-// Array of student objects (maximum size is 24) 
-Student StudentArray[24];
-
-
-// Member functions
-
-// Constructor with 1parameter.
-
-
-// Getter and setter function for each data member.
-
-
-// Void function which creates an array of Student objects by reading student data from input data file. 
-
-
-// Void function which sorts array of student objects by individual student’s average score.
-
-
-// Void function which sorts array of student objects by individual student’s last name.
-
-
-// Value-returning function which calculates and returns the average score of all students.
+};
 
 
-// Void function which displays all student’s last name, first name, 4 exam scores and average score.
 
 
-// Value-returning function which returns the number of students in the ClassRoom object. 
+
 
 #endif
