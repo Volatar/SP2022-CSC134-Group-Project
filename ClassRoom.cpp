@@ -80,6 +80,38 @@ void ClassRoom::popArray(ifstream _inFile)
 // Need to compare each student’s average score.
 // May use the selection sorting code or other sorting algorithm.
 
+//here is what i have for basically both the sorting things, I can post the rest of my part when i have this done so i can just copy/paste the whole thing
+//from VS since thats where i'm testing it
+//smh i rlly dont know what im doing
+
+void sortArrayByAvg()
+	{
+	
+		void swapping(int& a, int& b)						 //swap the content
+		{									//error, says "expected a ';' 	wtf				
+			int temp;
+			temp = a;
+			a = b;
+			b = temp;
+		}
+											//can i even do this? like putting a void in a void lol
+		void selectionSort(ClassRoom *popArray, int size) 			//this doesnt work i think
+		{									//I think i'm making this a lot more difficult than it should be :/
+			int i, j, imin;
+			for (i = 0; i < size - 1; i++) 
+			{
+				imin = i;   //get index of minimum score
+				for (j = i + 1; j < size; j++)
+					if (popArray[j] < popArray[imin])
+						imin = j;
+				//placing them in the correct position
+				swap(popArray[i], popArray[imin]);
+			}
+		}
+
+	}
+
+
 // Void function which sorts array of student objects by student last name.
 // Need to compare each student’s last name.
 // May use the selection sorting code or other sorting algorithm.
