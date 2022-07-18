@@ -110,7 +110,8 @@ void sortArrayByAvg()
 		}
 
 	}
-
+//lol just realized i did this whole thing wrong^
+//attempting to fix it as much as i can now lol
 
 // Void function which sorts array of student objects by student last name.
 // Need to compare each student’s last name.
