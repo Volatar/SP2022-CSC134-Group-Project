@@ -13,23 +13,55 @@ using namespace std;
 // Define the member functions of class ClassRoom in ClassRoom.cpp:
 
 // Constructor with 1parameter 
-// Requests classroom’s name as parameter.
-// Initialize classroom name with parameter value.
-// Initialize number of students as 0.
+ClassRoom::ClassRoom(string _className)
+{
+	className = _className;
+	numOfStudent = 0;
+}
+
+string ClassRoom::getClassName()
+{
+	return className;
+}
+int ClassRoom::getNumOfStudent()
+{
+	return numOfStudent;
+}
+Student* ClassRoom::getStudentArray()
+{
+	Student* ptr;
+	ptr = studentArray;
+	return ptr;
+}
+
+void ClassRoom::setClassName(string _className)
+{
+	className = _className;
+}
+void ClassRoom::setNumOfStudent(int _numOfStudent)
+{
+	numOfStudent = _numOfStudent;
+}
+void ClassRoom::setStudentArray(Student _studentArray[], int _numStudent)
+{
+	for (int i = 0; i < _numStudent; i++) studentArray[i] = _studentArray[i];
+}
 
 
-// Getter and setter function for each data member.
-// The getter function for the array of students getStudentArray() should return an array of Student objects, the return type could be a pointer to Student:
-Student* ClassRoom::getStudentArray() 
-// The setter function for the array of students setStudentArray should request an array of Student objects and number of students as parameters:
-void ClassRoom::setStudentArray(Student students[], int _numStudent)
+void ClassRoom::popArray(ifstream _inFile) 
+{
+	string fName, lName, ssn;
+	int scores[4];
+	while (_inFile)
+	{
+		_inFile >> fName >> lName;
+		for (int i = 0; i < 4; i++) _inFile >> scores[i];
+		Student student(fName, lName, ssn, scores);
 
-
-// Void function which creates an array of Student objects by reading student data from input data file. 
-// Request the input data file name as parameter.
-// Create a Student object by reading student record from the data file.
-// Add the student object in an array of Student.
-// Count the number of student objects created.
+		studentArray[numOfStudent] = student;
+		numOfStudent = student.getNumStudent()s;
+	}
+}
 
 // Norma Hernandez-Cruz from this point:
 
