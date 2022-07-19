@@ -128,7 +128,7 @@ void ClassRoom::sortArrayByLName()
 // average score = total of student’s average score / number of students 
 double ClassRoom::calcAvg()
 {
-	return -1;
+	return -1; // TODO
 }
 
 // Void function which displays last name, first name, 4 exam scores and average score for all students.

@@ -19,30 +19,31 @@ using namespace std;
 // There should be NO stand-alone function, all functions should be member functions of class student or ClassRoom. 
 
 // Define code to perform object-oriented programming in main () function of TestProgram.cpp:
-int main() {
-// Create a ClassRoom Object.  
+int main()
+{
+    // Create a ClassRoom Object.  
     ClassRoom classRoom("CSC-134");
 
-// Use the ClassRoom Object to create student object by reading student records from the input file “students.txt” 
-//    and put the student objects in the array of Students which is the data member of ClassRoom object.
-    string inFileName = "students.txt";
+    // Use the ClassRoom Object to create student object by reading student records from the input file “students.txt” 
+    //    and put the student objects in the array of Students which is the data member of ClassRoom object.
+    const string inFileName = "students.txt";
     classRoom.popArray(inFileName);
 
-// Use the ClassRoom Object to sort the array of students by student average score.
+    // Use the ClassRoom Object to sort the array of students by student average score.
     classRoom.sortArrayByAvg();
 
-// Use the ClassRoom Object to display the students sorted by student average score.
+    // Use the ClassRoom Object to display the students sorted by student average score.
     classRoom.displayStudentData();
 
-// Use the ClassRoom Object to sort the array of students by student last name.
+    // Use the ClassRoom Object to sort the array of students by student last name.
     classRoom.sortArrayByLName();
 
-// Use the ClassRoom Object to display the students sorted by student last name.
+    // Use the ClassRoom Object to display the students sorted by student last name.
     classRoom.displayStudentData();
 
-// Use the ClassRoom Object to display the number of Student objects created.
+    // Use the ClassRoom Object to display the number of Student objects created.
     cout << "Number of students in class: " << classRoom.numOfStudentsInClass() << endl;
 
-// Use the ClassRoom Object to calculate and display the average score of all students. 
+    // Use the ClassRoom Object to calculate and display the average score of all students. 
     cout << "Average score of all students: " << classRoom.calcAvg() << endl;
 }
