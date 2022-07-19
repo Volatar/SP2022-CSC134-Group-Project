@@ -32,7 +32,6 @@ Student::Student()
 }
 
 
-
 // Constructor with parameters
 Student::Student(string _fName, string _lName, string _ssn, double _scores[4])
 {
@@ -48,14 +47,12 @@ Student::Student(string _fName, string _lName, string _ssn, double _scores[4])
 }
 
 
-
 // Destructor
 Student::~Student()
 {
     // Update the static number of students by decreasing 1.
     numStudent--;
 }
-
 
 
 // Getter and setter function for each non-static data member.

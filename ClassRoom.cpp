@@ -3,6 +3,7 @@
 // Group 8
 
 #include "ClassRoom.h"
+#include <iostream>
 
 using namespace std;
 
@@ -82,10 +83,6 @@ void ClassRoom::popArray(string _inFileName)
 // Need to compare each student’s average score.
 // May use the selection sorting code or other sorting algorithm.
 
-//here is what i have for basically both the sorting things, I can post the rest of my part when i have this done so i can just copy/paste the whole thing
-//from VS since thats where i'm testing it
-//smh i rlly dont know what im doing
-
 void ClassRoom::sortArrayByAvg()
 {
 	int index;
@@ -103,19 +100,47 @@ void ClassRoom::sortArrayByAvg()
 				}
 		}
 	}
-
-
 }
-//lol just realized i did this whole thing wrong^
-//attempting to fix it as much as i can now lol
 
 // Void function which sorts array of student objects by student last name.
 // Need to compare each student’s last name.
 // May use the selection sorting code or other sorting algorithm.
+void ClassRoom::sortArrayByLName()
+{
+	int index;
+	Student tempStudent;
+
+	for (int i = 0; i < numOfStudent; i++)
+	{
+		for (int n = 0; n < numOfStudent; n++)
+		{
+			if (studentArray[i].getLName() < studentArray[n].getLName())
+				{
+					tempStudent = studentArray[i];
+					studentArray[i] = studentArray[n];
+					studentArray[n] = tempStudent;
+				}
+		}
+	}
+}
 
 // Value-returning function which calculates and returns the average score of all students.
 // average score = total of student’s average score / number of students 
+double ClassRoom::calcAvg()
+{
+	return -1;
+}
 
 // Void function which displays last name, first name, 4 exam scores and average score for all students.
 // All students’ information should be displayed using this format:
 // An image is included in the original document, please refer there for it
+void ClassRoom::displayStudentData()
+{
+	cout << "DEBUG"; // TODO
+}
+
+
+int ClassRoom::numOfStudentsInClass()
+{
+	return numOfStudent;
+}
