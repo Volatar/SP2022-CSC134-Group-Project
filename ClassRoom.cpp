@@ -55,10 +55,12 @@ void ClassRoom::setStudentArray(Student _studentArray[], int _numStudent)
 }
 
 // Void function which creates an array of Student objects by reading student data from input data file. 
-void ClassRoom::popArray(ifstream _inFile) 
+void ClassRoom::popArray(string _inFileName) 
 {
 	string fName, lName, ssn;
-	int scores[4];
+	double scores[4];
+	fstream _inFile;
+	_inFile.open(_inFileName, ios::in);
 	while (_inFile)
 	{
 		// Create a Student object by reading student record from the data file.
@@ -70,7 +72,7 @@ void ClassRoom::popArray(ifstream _inFile)
 		studentArray[numOfStudent] = student;
 		
 		// Count the number of student objects created.
-		numOfStudent = student.getNumStudent()s;
+		numOfStudent = student.getNumStudent();
 	}
 }
 
@@ -84,32 +86,26 @@ void ClassRoom::popArray(ifstream _inFile)
 //from VS since thats where i'm testing it
 //smh i rlly dont know what im doing
 
-void sortArrayByAvg()
-	{
-	
-		void swapping(int& a, int& b)						 //swap the content
-		{									//error, says "expected a ';' 	wtf				
-			int temp;
-			temp = a;
-			a = b;
-			b = temp;
-		}
-											//can i even do this? like putting a void in a void lol
-		void selectionSort(ClassRoom *popArray, int size) 			//this doesnt work i think
-		{									//I think i'm making this a lot more difficult than it should be :/
-			int i, j, imin;
-			for (i = 0; i < size - 1; i++) 
-			{
-				imin = i;   //get index of minimum score
-				for (j = i + 1; j < size; j++)
-					if (popArray[j] < popArray[imin])
-						imin = j;
-				//placing them in the correct position
-				swap(popArray[i], popArray[imin]);
-			}
-		}
+void ClassRoom::sortArrayByAvg()
+{
+	int index;
+	Student tempStudent;
 
+	for (int i = 0; i < numOfStudent; i++)
+	{
+		for (int n = 0; n < numOfStudent; n++)
+		{
+			if (studentArray[i].averageScore() < studentArray[n].averageScore())
+				{
+					tempStudent = studentArray[i];
+					studentArray[i] = studentArray[n];
+					studentArray[n] = tempStudent;
+				}
+		}
 	}
+
+
+}
 //lol just realized i did this whole thing wrong^
 //attempting to fix it as much as i can now lol
 

@@ -2,11 +2,8 @@
 // SP2022 CSC-134 Group Project
 // Group 8
 
-#ifndef CLASSROOM_H
-#define CLASSROOM_H
-
 #include "Student.h"
-#include <ifstream>
+#include <fstream>
 
 using namespace std;
 
@@ -28,18 +25,10 @@ public:
 	void setNumOfStudent(int _numOfStudent);
 	void setStudentArray(Student _studentArray[], int _numStudent);
 	
-	void popArray(ifstream _inFile);
+	void popArray(string _inFileName);
 	void sortArrayByAvg();
 	void sortArrayByLName();
 	double calcAvg();
 	void displayStudentData();
 	int numOfStudentsInClass();
-
 };
-
-
-
-
-
-
-#endif
