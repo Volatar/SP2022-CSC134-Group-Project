@@ -26,7 +26,7 @@ int main()
 
     // Use the ClassRoom Object to create student object by reading student records from the input file “students.txt” 
     //    and put the student objects in the array of Students which is the data member of ClassRoom object.
-    const string inFileName = "students.txt";
+    const string inFileName = "studentinfo.txt";
     classRoom.popArray(inFileName);
 
     // Use the ClassRoom Object to sort the array of students by student average score.
