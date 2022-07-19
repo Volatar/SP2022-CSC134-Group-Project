@@ -65,8 +65,9 @@ void ClassRoom::popArray(string _inFileName)
 	while (_inFile)
 	{
 		// Create a Student object by reading student record from the data file.
-		_inFile >> fName >> lName;
-		for (int i = 0; i < 4; i++) _inFile >> scores[i];
+		_inFile >> fName >> lName >> ssn;
+		for (int i = 0; i < 4; i++) 
+			_inFile >> scores[i];
 		Student student(fName, lName, ssn, scores);
 		
 		// Add the student object in an array of Student.

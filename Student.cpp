@@ -15,7 +15,7 @@ using namespace std;
 // Define the member functions of class Student in Student.cpp:
 
 // Initialize static variable number of students to 0 before defining any function. 
-static int numStudent = 0;
+int Student::numStudent = 0;
 
 // Constructor without parameter
 Student::Student()
@@ -26,9 +26,6 @@ Student::Student()
     ssn = "";
     for (int i = 0; i < 4; i++)
         scores[i] = 0.0;
-    
-    // Update the static number of students by increasing 1.
-    numStudent++;
 }
 
 
@@ -93,7 +90,7 @@ void Student::setSSN(string _ssn)
     ssn = _ssn;
 }
 
-void Student::setScores(double _scores[])
+void Student::setScores(double _scores[4])
 {
     for (int i = 0; i < 4; i++)
         scores[i] = _scores[i];
@@ -122,7 +119,7 @@ void Student::display()
 }
 
 // Value-returning function which returns the number of student object created.
-static int getNumStudent()
+int Student::getNumStudent()
 {
     return numStudent;
 }
