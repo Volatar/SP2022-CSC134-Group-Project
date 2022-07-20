@@ -5,7 +5,7 @@
 #include "Student.h"
 #include "ClassRoom.h"
 #include <iostream>
-#include <string>
+
 
 using namespace std;
 
@@ -19,15 +19,16 @@ using namespace std;
 // There should be NO stand-alone function, all functions should be member functions of class student or ClassRoom. 
 
 // Define code to perform object-oriented programming in main () function of TestProgram.cpp:
-int main()
-{
+int main() {
     // Create a ClassRoom Object.  
     ClassRoom classRoom("CSC-134");
+    cout << "classroom created";
 
     // Use the ClassRoom Object to create student object by reading student records from the input file “students.txt” 
     //    and put the student objects in the array of Students which is the data member of ClassRoom object.
-    const string inFileName = "studentinfo.txt";
-    classRoom.popArray(inFileName);
+    string file = "studentinfo.txt";
+    classRoom.popArray(file);
+    cout << "studentinfo.txt opened";
 
     // Use the ClassRoom Object to sort the array of students by student average score.
     classRoom.sortArrayByAvg();
@@ -42,10 +43,8 @@ int main()
     classRoom.displayStudentData();
 
     // Use the ClassRoom Object to display the number of Student objects created.
-    cout << "Number of students in class: " << classRoom.numOfStudentsInClass() << endl;
+    cout << "Number of students in class: " << classRoom.getNumOfStudent() << endl;
 
     // Use the ClassRoom Object to calculate and display the average score of all students. 
     cout << "Average score of all students: " << classRoom.calcAvg() << endl;
-
-    return 0;
 }
