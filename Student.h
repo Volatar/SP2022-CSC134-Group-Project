@@ -6,6 +6,8 @@
 #define STUDENT_H
 
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 using namespace std;
 
