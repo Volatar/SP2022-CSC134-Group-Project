@@ -28,7 +28,7 @@ int main()
 
     // Use the ClassRoom Object to create student object by reading student records from the input file “students.txt” 
     //    and put the student objects in the array of Students which is the data member of ClassRoom object.
-    string file = "studentinfo.txt";
+    const string file = "studentinfo.txt";
     classRoom.popArray(file);
     cout << "studentinfo.txt opened. " << endl;
     cout << endl;

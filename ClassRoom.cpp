@@ -4,6 +4,7 @@
 
 #include "ClassRoom.h"
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -65,8 +66,11 @@ void ClassRoom::popArray(string _inFileName)
 {
 	string fName, lName, ssn;
 	double scores[4];
-	fstream _inFile;
-	_inFile.open(_inFileName, ios::in);
+	ifstream _inFile;
+	_inFile.open(_inFileName);
+	string line; // debug
+	_inFile >> line; // debug
+	cout << "DEBUG, THIS LINE SHOULD HAVE TEXT: " << line << endl; // debug
 	while (_inFile)
 	{
 		// Create a Student object by reading student record from the data file.
