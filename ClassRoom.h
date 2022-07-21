@@ -20,6 +20,8 @@ private:
 public:
 	// constructor
 	ClassRoom(string _className);
+	// destructor
+	~ClassRoom();
 	// Get set func
 	string getClassName();
 	int getNumOfStudent();
@@ -36,4 +38,4 @@ public:
 	int numOfStudentsInClass();
 };
 
-#endif;
+#endif

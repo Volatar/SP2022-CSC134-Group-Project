@@ -21,6 +21,11 @@ ClassRoom::ClassRoom(string _className)
 	numOfStudent = 0; // Initialize number of students as 0.
 }
 
+ClassRoom::~ClassRoom()
+{
+	
+}
+
 // Getter and setter function for each data member.
 
 string ClassRoom::getClassName()
