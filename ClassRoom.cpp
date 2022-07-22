@@ -68,13 +68,10 @@ void ClassRoom::popArray(string _inFileName)
 	double scores[4];
 	ifstream _inFile;
 	_inFile.open(_inFileName);
-	//string line; // debug
-	//_inFile >> line; // debug
-	//cout << "DEBUG, THIS LINE SHOULD HAVE TEXT: " << line << endl; // debug
-	while (_inFile)
+	
+	while (_inFile >> lName >> fName >> ssn)
 	{
 		// Create a Student object by reading student record from the data file.
-		_inFile >> lName >> fName >> ssn;
 		for (int i = 0; i < 4; i++)
 		{
 			_inFile >> scores[i];
@@ -85,11 +82,10 @@ void ClassRoom::popArray(string _inFileName)
 		studentArray[numOfStudent] = student;
 
 		// Count the number of student objects created.
-		numOfStudent ++;
-		cout << "\nnumOfStudent: " << numOfStudent << "student.getNumStudent: " << student.getNumStudent() << " " << lName << " " << fName << " " << ssn << " " << scores << " ";
-		student.display();
+		numOfStudent++;
 	}
 }
+
 
 // Norma Hernandez-Cruz from this point:
 
