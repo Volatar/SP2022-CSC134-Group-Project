@@ -40,18 +40,18 @@ int main()
     classRoom.sortArrayByAvg();
 
     // Use the ClassRoom Object to display the students sorted by student average score.
-    cout << "Sorted by avgerage scores: " << endl;
+    cout << "\nSorted by avgerage scores: " << endl;
     classRoom.displayStudentData();
 
     // Use the ClassRoom Object to sort the array of students by student last name.
     classRoom.sortArrayByLName();
 
     // Use the ClassRoom Object to display the students sorted by student last name.
-    cout << "Sorted by last name: " << endl;
+    cout << "\nSorted by last name: " << endl;
     classRoom.displayStudentData();
 
     // Use the ClassRoom Object to display the number of Student objects created.
-    cout << "Number of students in class: " << classRoom.getNumOfStudent() << endl;
+    cout << "\nNumber of students in class: " << classRoom.getNumOfStudent() << endl;
 
     // Use the ClassRoom Object to calculate and display the average score of all students. 
     cout << "Average score of all students: " << classRoom.calcAvg() << endl;
