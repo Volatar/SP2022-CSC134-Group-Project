@@ -54,7 +54,7 @@ int main()
     cout << "\nNumber of students in class: " << classRoom.getNumOfStudent() << endl;
 
     // Use the ClassRoom Object to calculate and display the average score of all students. 
-    cout << "Average score of all students: " << classRoom.calcAvg() << endl;
+    cout << "\nAverage score of all students: " << classRoom.calcAvg() << endl;
 
     return 0;
 }
