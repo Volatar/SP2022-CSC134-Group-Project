@@ -173,7 +173,7 @@ void ClassRoom::displayStudentData()
 {
 	cout << setfill(' ') << "Last Name" << setw(15) << "First Name" << setw(10) << "SSN" << setw(25) << "Score 1" << setw(10) << "Score 2" << setw(10) << "Score 3" << setw(10) << "Score 4" << setw(10) << "Average" << endl;
 	cout << setfill('-') << setw(100) << "" << endl;
-	cout << endl;
+	cout << setfill(' ') << endl;
 
 	for (int i = 0; i < numOfStudent; i++)
 	{
