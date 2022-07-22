@@ -115,7 +115,7 @@ void Student::display()
     cout << setw(15) << left << ssn;
     for (int i = 0; i < 4; i++)
         cout << setw(10) << right << showpoint << fixed << setprecision(1) << scores[i];
-    cout << setw(10) << right << showpoint << fixed << setprecision(1) << Student::averageScore();
+    cout << setw(10) << right << showpoint << fixed << setprecision(1) << Student::averageScore() << endl;
 }
 
 // Value-returning function which returns the number of student object created.
