@@ -110,9 +110,9 @@ double Student::averageScore()
 // Void function to display student’s last name, first name, 4 exam scores and average score.
 void Student::display()
 {
-    cout << setw(15) << left << lName;
-    cout << setw(15) << left << fName;
-    cout << setw(15) << left << ssn;
+    cout << setw(14) << left << lName;
+    cout << setw(17) << left << fName;
+    cout << setw(16) << left << ssn;
     for (int i = 0; i < 4; i++)
         cout << setw(10) << right << showpoint << fixed << setprecision(1) << scores[i];
     cout << setw(10) << right << showpoint << fixed << setprecision(1) << Student::averageScore() << endl;
