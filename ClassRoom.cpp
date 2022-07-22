@@ -24,7 +24,7 @@ ClassRoom::ClassRoom(string _className)
 
 ClassRoom::~ClassRoom()
 {
-	
+
 }
 
 // Getter and setter function for each data member.
@@ -62,28 +62,32 @@ void ClassRoom::setStudentArray(Student _studentArray[], int _numStudent)
 }
 
 // Void function which creates an array of Student objects by reading student data from input data file. 
-void ClassRoom::popArray(string _inFileName) 
+void ClassRoom::popArray(string _inFileName)
 {
 	string fName, lName, ssn;
 	double scores[4];
 	ifstream _inFile;
 	_inFile.open(_inFileName);
-	string line; // debug
-	_inFile >> line; // debug
-	cout << "DEBUG, THIS LINE SHOULD HAVE TEXT: " << line << endl; // debug
+	//string line; // debug
+	//_inFile >> line; // debug
+	//cout << "DEBUG, THIS LINE SHOULD HAVE TEXT: " << line << endl; // debug
 	while (_inFile)
 	{
 		// Create a Student object by reading student record from the data file.
-		_inFile >> fName >> lName >> ssn;
-		for (int i = 0; i < 4; i++) 
+		_inFile >> lName >> fName >> ssn;
+		for (int i = 0; i < 4; i++)
+		{
 			_inFile >> scores[i];
+		}
 		Student student(fName, lName, ssn, scores);
-		
+
 		// Add the student object in an array of Student.
 		studentArray[numOfStudent] = student;
-		
+
 		// Count the number of student objects created.
-		numOfStudent = student.getNumStudent();
+		numOfStudent ++;
+		cout << "\nnumOfStudent: " << numOfStudent << "student.getNumStudent: " << student.getNumStudent() << " " << lName << " " << fName << " " << ssn << " " << scores << " ";
+		student.display();
 	}
 }
 
@@ -103,81 +107,77 @@ int ClassRoom::numOfStudentsInClass()
 // Need to compare each student’s average score.
 // May use the selection sorting code or other sorting algorithm.
 
-	void ClassRoom::sortArrayByAvg()
+void ClassRoom::sortArrayByAvg()
+{
+	// Sort the array of student objects by student average score.
+	for (int i = 0; i < numOfStudent; i++)
 	{
-		int index;
-		Student tempStudent;
-		numOfStudent = Student::getNumStudent() - 1;
-		for (int i = 0; i < numOfStudent; i++)
+		for (int j = 0; j < numOfStudent - 1; j++)
 		{
-			for (int n = 0; n < numOfStudent; n++)
+			if (studentArray[j].averageScore() > studentArray[j + 1].averageScore())
 			{
-				if (studentArray[i].averageScore() < studentArray[n].averageScore())
-				{
-					tempStudent = studentArray[i];
-					studentArray[i] = studentArray[n];
-					studentArray[n] = tempStudent;
-				}
+				Student temp = studentArray[j];
+				studentArray[j] = studentArray[j + 1];
+				studentArray[j + 1] = temp;
 			}
 		}
-
 	}
-
+}
 
 // Void function which sorts array of student objects by student last name.
 // Need to compare each student’s last name.
 // May use the selection sorting code or other sorting algorithm.
 
-	void ClassRoom::sortArrayByLName()
-	{
-		int index;
-		Student tempStudent;
+void ClassRoom::sortArrayByLName()
+{
+	//int index;
+	Student tempStudent;
 
-		for (int i = 0; i < numOfStudent; i++)
+	for (int i = 0; i < numOfStudent; i++)
+	{
+		for (int n = 0; n < numOfStudent; n++)
 		{
-			for (int n = 0; n < numOfStudent; n++)
+			if (studentArray[i].getLName() < studentArray[n].getLName())
 			{
-				if (studentArray[i].getLName() < studentArray[n].getLName())
-				{
-					tempStudent = studentArray[i];
-					studentArray[i] = studentArray[n];
-					studentArray[n] = tempStudent;
-				}
+				tempStudent = studentArray[i];
+				studentArray[i] = studentArray[n];
+				studentArray[n] = tempStudent;
 			}
 		}
 	}
+}
 
 // Value-returning function which calculates and returns the average score of all students.
 // average score = total of student’s average score / number of students 
 
-	double ClassRoom::calcAvg()
-	{ 
-		double classAverage;
-		classAverage = 0.0;
+double ClassRoom::calcAvg()
+{
+	double classAverage;
+	classAverage = 0.0;
 
-		for (int i = 0; i < numOfStudent; i++)
-		{
-			classAverage = (classAverage + studentArray[i].averageScore());
-		}
-		classAverage = (classAverage / numOfStudent);
-
-		return classAverage;
+	for (int i = 0; i < numOfStudent; i++)
+	{
+		classAverage = (classAverage + studentArray[i].averageScore());
 	}
+	classAverage = (classAverage / numOfStudent);
+
+	return classAverage;
+}
 
 
 // Void function which displays last name, first name, 4 exam scores and average score for all students.
 // All students’ information should be displayed using this format:
 // An image is included in the original document, please refer there for it
 
-	void ClassRoom::displayStudentData() 
+void ClassRoom::displayStudentData()
+{
+	cout << setfill(' ') << "Last Name" << setw(15) << "First Name" << setw(10) << "SSN" << setw(25) << "Score 1" << setw(10) << "Score 2" << setw(10) << "Score 3" << setw(10) << "Score 4" << setw(10) << "Average" << endl;
+	cout << setfill('-') << setw(100) << "" << endl;
+	cout << endl;
+
+	for (int i = 0; i < numOfStudent; i++)
 	{
-		cout << setfill(' ') << "Last Name" << setw(15) << "First Name" << setw(10) << "SSN" << setw(25) << "Score 1" << setw(10) << "Score 2" << setw(10) << "Score 3" << setw(10)  << "Score 4" << setw(10) << "Average" << endl;
-		cout << setfill('-') << setw(100) << "" << endl;
-		cout << endl;
-
-		for (int i = 0; i < numOfStudent; i++)
-		{
-			studentArray[i].display();
-		}
-
+		studentArray[i].display();
 	}
+
+}
